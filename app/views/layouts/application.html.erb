@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Allo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Allo</h1>
+    <a href="<%= orders_path %>">Liste des commandes</a>
+    <a href="<%= new_order_path %>">Passe ta commande !</a>
+    <%= yield %>
+  </body>
+</html>

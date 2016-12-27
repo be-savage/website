@@ -1,0 +1,24 @@
+<h2>Liste des commandes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Description</th>
+      <th>Demandeur</th>
+      <th>Heure de commande</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><a href="<%= order_path(order) %>"><%= order.id %></a></td>
+      <td><%= order.content %></td>
+      <td><%= order.author %></td>
+      <td><%= order.created_at %></td>
+      <td><a href="<%= order_path(order) %>" data-method="delete" data-confirm="Êtes-vous sur ?">X</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
