@@ -1,9 +1,18 @@
 <h2>Commande #<%= @order.id %></h2>
 
+<a href="<%= edit_order_path(@order) %>">Éditer</a>
+
 <p>
   <em>Auteur : </em>
   <%= @order.author %>
 </p>
+
+<% if @order.stand %>
+    <p>
+      <em>Affectation : </em>
+      <%= @order.stand.label %>
+    </p>
+<% end %>
 
 <p>
   <strong>Description : </strong>

@@ -1,0 +1,19 @@
+<h2>Éditer la commande #<%= @order.id %></h2>
+
+<%= form_for :order, url: order_path, method: :patch do |f| %>
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </p>
+
+    <p>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </p>
+
+    <p>
+      <%= collection_select(:order, :stand_id, @stands, :id, :name, include_blank: true) %>
+    </p>
+
+    <%= f.submit %>
+<% end %>

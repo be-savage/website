@@ -1,0 +1,23 @@
+<h2>Les stands</h2>
+<a href="<%= new_stand_path %>">Nouveau stand</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Position</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stands.each do |stand| %>
+    <tr>
+      <td><%= stand.id %></td>
+      <td><%= stand.label %></td>
+      <td><%= stand.location %></td>
+      <td><a href="<%= stand_path(stand) %>" data-method="delete" data-confirm="Êtes-vous sur ? Cela désaffectera toutes les commandes associées à ce stand.">X</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

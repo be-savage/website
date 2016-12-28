@@ -15,7 +15,7 @@
 /log/*
 /tmp/*
 !/log/.keep
-!/tmp/.keep
+!/tmp/.keepslack client
 
 # Ignore Byebug command history file.
 .byebug_history
