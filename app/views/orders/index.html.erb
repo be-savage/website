@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>#</th>
+      <th>Lieu</th>
       <th>Description</th>
       <th>Demandeur</th>
       <th>Affectation</th>
@@ -15,6 +16,7 @@
   <% @orders.each do |order| %>
     <tr>
       <td><a href="<%= order_path(order) %>"><%= order.id %></a></td>
+      <td><%= order.place ? order.place.label : '' %></td>
       <td><%= order.content %></td>
       <td><%= order.author %></td>
       <td><%= order.stand ? order.stand.label : '' %></td>

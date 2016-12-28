@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   # Stands
   resources :stands
+
+  # Places
+  resources :places
 end

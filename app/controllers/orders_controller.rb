@@ -9,10 +9,16 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @places = Place.all
   end
 
   def create
     @order = Order.new(order_params)
+
+    if @order.place.stand
+      @order.stand = @order.place.stand
+    end
+
     if @order.save
       redirect_to orders_path
     else
@@ -43,6 +49,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:content, :author, :stand_id)
+    params.require(:order).permit(:content, :author, :stand_id, :place_id)
   end
 end

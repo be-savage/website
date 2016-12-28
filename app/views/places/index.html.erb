@@ -1,0 +1,23 @@
+<h2>Lieux</h2>
+
+<a href="<%= new_place_path %>">Nouveau lieu</a>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Affectation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.each do |place| %>
+    <tr>
+      <td><%= place.id %></td>
+      <td><%= place.label %></td>
+      <td><%= place.description %></td>
+      <td><%= place.stand ? place.stand.label : '' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
