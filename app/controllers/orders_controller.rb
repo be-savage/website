@@ -19,9 +19,10 @@ class OrdersController < ApplicationController
       @order.stand = @order.place.stand
     end
 
-    if @order.save
+    if verify_recaptcha(model: @user) && @order.save
       redirect_to orders_path
     else
+      @places = Place.all
       render 'new'
     end
   end
