@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    if @order.place.stand
+    if !@order.place.nil?  && !@order.place.stand.nil?
       @order.stand = @order.place.stand
     end
 
