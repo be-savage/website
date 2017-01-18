@@ -10,11 +10,20 @@
 
   <body>
     <h1>Allo</h1>
+    <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <hr>
     <a href="<%= new_order_path %>">Passe ta commande !</a>
     <hr>
     <a href="<%= orders_path %>">Commandes</a>
     <a href="<%= stands_path %>">Stands</a>
     <a href="<%= places_path %>">Lieux</a>
+    <% if user_signed_in? %>
+      <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Connexion', new_user_session_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
