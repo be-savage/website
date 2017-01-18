@@ -1,5 +1,7 @@
 class StandsController < ApplicationController
 
+  authorize_resource
+
   def index
     @stands = Stand.all
   end
