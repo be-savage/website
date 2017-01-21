@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  authorize_resource
+
   def index
     @orders = Order.all
   end

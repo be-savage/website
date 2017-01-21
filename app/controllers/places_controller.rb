@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
 
+  authorize_resource
+
   def index
     @places = Place.all
   end
