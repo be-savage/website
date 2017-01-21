@@ -2,7 +2,7 @@
 
 <%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, url: orders_path do |f| %>
     <%= f.association :place %>
-    <%= f.input :content, as: :text %>
+    <%= f.input :content %>
     <%= f.input :author %>
 
     <%= recaptcha_tags %>

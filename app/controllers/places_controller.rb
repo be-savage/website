@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @stands = Stand.all
+    @place = Place.new
   end
 
   def create

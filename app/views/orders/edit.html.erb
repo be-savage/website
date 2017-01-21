@@ -1,19 +1,10 @@
 <h2>Éditer la commande #<%= @order.id %></h2>
 
-<%= form_for :order, url: order_path, method: :patch do |f| %>
-    <p>
-      <%= f.label :content %>
-      <%= f.text_area :content %>
-    </p>
+<%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, url: orders_path, method: :patch do |f| %>
+    <%= f.association :place %>
+    <%= f.association :stand %>
+    <%= f.input :content %>
+    <%= f.input :author %>
 
-    <p>
-      <%= f.label :author %>
-      <%= f.text_field :author %>
-    </p>
-
-    <p>
-      <%= collection_select(:order, :stand_id, @stands, :id, :name, include_blank: true) %>
-    </p>
-
-    <%= f.submit %>
+    <%= f.button :submit %>
 <% end %>
