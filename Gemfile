@@ -28,8 +28,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'recaptcha', require: 'recaptcha/rails'
+# Auth and rights
 gem 'devise'
 gem 'cancancan'
+# SimpleForm
+gem 'simple_form', '~> 3.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

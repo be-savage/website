@@ -9,21 +9,49 @@
   </head>
 
   <body>
-    <h1>Allo</h1>
-    <hr>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <hr>
-    <a href="<%= new_order_path %>">Passe ta commande !</a>
-    <hr>
-    <% if user_signed_in? %>
-      <a href="<%= orders_path %>">Commandes</a>
-      <a href="<%= stands_path %>">Stands</a>
-      <a href="<%= places_path %>">Lieux</a>
-      <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Connexion', new_user_session_path %>
-    <% end %>
-    <%= yield %>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<%= root_path %>">
+            Worth it
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <%= nav_link 'Passe ta commande !', new_order_path %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bonjour <%= current_user.username %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <%= nav_link 'Commandes', orders_path %>
+                  <%= nav_link 'Stands', stands_path %>
+                  <%= nav_link 'Lieux', places_path %>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+                <%= nav_link 'Connexion', new_user_session_path %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
