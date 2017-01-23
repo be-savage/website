@@ -1,4 +1,7 @@
-<h2>Éditer la commande #<%= @order.id %></h2>
+<div class="page-header">
+  <h1>Éditer la commande <small>#<%= @order.id %></small></h1>
+</div>
+
 
 <%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, url: orders_path, method: :patch do |f| %>
     <%= f.association :place %>

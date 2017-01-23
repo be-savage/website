@@ -9,6 +9,8 @@ gem 'sqlite3'
 # gem 'puma', '~> 3.0' # Compilation failed for me (agd)
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+gem 'jquery-datatables-rails', '~> 3.4'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
