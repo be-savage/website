@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @places = Place.all
+    @order = Order.new
   end
 
   def create

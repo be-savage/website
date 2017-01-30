@@ -7,6 +7,7 @@ class StandsController < ApplicationController
   end
 
   def new
+    @stand = Stand.new
   end
 
   def create
