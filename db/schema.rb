@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117004028) do
+ActiveRecord::Schema.define(version: 20170130225327) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170117004028) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string   "label"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "classification"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -58,9 +65,14 @@ ActiveRecord::Schema.define(version: 20170117004028) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.         "firstname"
+    t.         "name"
+    t.         "nickname"
+    t.integer  "team_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["team_id"], name: "index_users_on_team_id"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

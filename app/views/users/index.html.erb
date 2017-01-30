@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Gestion des utilisateurs</h1>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom d'utilisateur</th>
+      <th>Surnom</th>
+      <th>Prenom Nom</th>
+      <th>Pôle</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.username %></td>
+      <td><%= user.nickname %></td>
+      <td><%= user.firstname %> <%= user.name %></td>
+      <td><%= if !user.team.nil?
+                user.team.label
+              end %></td>
+      <td>
+        <div class="btn-group btn-group-sm">
+          <a class="btn btn-warning" href="<%= edit_user_path(user.id) %>">
+            <i class="fa fa-pencil"></i>
+          </a>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
