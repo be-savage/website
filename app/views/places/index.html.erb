@@ -1,7 +1,12 @@
-<h2>Lieux</h2>
+<div class="page-header">
+  <h1>Lieux</h1>
+</div>
 
-<a href="<%= new_place_path %>">Nouveau lieu</a>
-<table>
+<a href="<%= new_place_path %>" class="btn btn-default pull-right">
+  <i class="fa fa-plus"></i> Nouveau
+</a>
+
+<table class="table table-hover datatable">
   <thead>
     <tr>
       <th>#</th>
@@ -21,3 +26,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= javascript_include_tag params[:controller] %>
