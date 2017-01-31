@@ -22,3 +22,6 @@
 
 # Env file
 .env
+
+# Public system images
+public/system/

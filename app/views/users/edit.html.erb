@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>Éditer l'utilisateur <small><%= @user.username %></small></h1>
+</div>
+
+<%= simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :username %>
+    <%= f.input :email %>
+    <%= f.input :name %>
+    <%= f.input :firstname %>
+    <%= f.input :nickname  %>
+    <%= f.input :role %>
+    <%= f.input :avatar, as: :file %>
+    <%= f.input :avatar_hover, as: :file %>
+    <%= f.association :team %>
+
+    <%= f.button :submit %>
+<% end %>

@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Places
   resources :places
+
+  # Users
+  resources :users
+
+  # Teams
+  resources :teams
 end
