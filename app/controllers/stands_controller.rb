@@ -1,10 +1,13 @@
 class StandsController < ApplicationController
 
+  authorize_resource
+
   def index
     @stands = Stand.all
   end
 
   def new
+    @stand = Stand.new
   end
 
   def create

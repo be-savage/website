@@ -1,0 +1,52 @@
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars fa-2x"></span>
+        </button>
+        <a href="<%= root_path %>" class="navbar-brand">Worth it</a>
+      </div>
+      <div class="collapse navbar-collapse pull-right">
+        <ul class="nav navbar-nav">
+          <%= nav_link 'Passe ta commande !', new_order_path %>
+          <li class=""><a href="#">Accueil</a></li>
+          <li class=""><a href="#membres">Membres</a></li>
+          <!-- <li class=""><a href="#">Campagnes</a></li> -->
+          <li class=""><a href="#voyages">Voyages</a></li>
+          <li class=""><a href="defis">Défis</a></li>
+          <li class=""><a href="#">Soirées</a></li>
+          <!-- <li class=""><a href="#">Projets</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bonjour <%= current_user.username %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <%= nav_link 'Commandes', orders_path %>
+                  <%= nav_link 'Stands', stands_path %>
+                  <%= nav_link 'Lieux', places_path %>
+                  <%= nav_link 'Utilisateurs', users_path %>
+                  <%= nav_link 'Pôles', teams_path %>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+          <% else %>
+              <%= nav_link 'Connexion', new_user_session_path %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert"><%= alert %></p>
+<% end %>

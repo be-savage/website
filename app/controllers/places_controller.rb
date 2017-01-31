@@ -1,11 +1,13 @@
 class PlacesController < ApplicationController
 
+  authorize_resource
+
   def index
     @places = Place.all
   end
 
   def new
-    @stands = Stand.all
+    @place = Place.new
   end
 
   def create

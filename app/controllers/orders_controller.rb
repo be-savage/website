@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  authorize_resource
+
   def index
     @orders = Order.all
   end
@@ -9,13 +11,13 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @places = Place.all
+    @order = Order.new
   end
 
   def create
     @order = Order.new(order_params)
 
-    if @order.place.stand
+    if !@order.place.nil?  && !@order.place.stand.nil?
       @order.stand = @order.place.stand
     end
 

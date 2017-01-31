@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # Orders
-  root 'main#index'
+  devise_for :users
+  root to: 'main#index'
 
   # Orders
   resources :orders
@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Places
   resources :places
+
+  # Users
+  resources :users
+
+  # Teams
+  resources :teams
 end
