@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20161228220215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "stand_id"
-    t.         "place"
     t.integer  "place_id"
     t.index ["place_id"], name: "index_orders_on_place_id"
     t.index ["stand_id"], name: "index_orders_on_stand_id"

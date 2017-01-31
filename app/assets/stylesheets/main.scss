@@ -1,0 +1,164 @@
+$fontColor : #ccc;
+$teamColor : rgba(18,10,69,1);
+
+@keyframes slide-animation {
+  0%   {width: 0;}
+  100% {width: 100%;}
+}
+
+@keyframes tu-me-fais-tourner-laaaa-tete {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+}
+@keyframes fancy-fade {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+    color: inherit;
+  }
+}
+
+nav {
+  // font-weight: bold;
+  font-size: 2rem;
+  &.navbar {
+    background: $teamColor;
+    transition: background .5s;
+    height: 6rem;
+
+    .nav > li a, .navbar-brand {
+        color: $fontColor;
+        border-bottom: solid 1px transparent;
+        font-variant: small-caps;
+        &:hover {
+          color: lighten($fontColor, 100%);
+          border-bottom: solid 1px #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    &.navbar {
+      // background: rgba(18,10,69,1);
+      background: rgba(0,0,0,0.4);
+      border-bottom: solid 1px rgba(255,255,255,0.5);
+
+    }
+  }
+}
+html, body {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.presentation {
+ background: url(/background2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $fontColor;
+
+  .title {
+    text-align: center;
+
+    h1 {
+      text-transform: uppercase;
+      float: none;
+      position: relative;
+      display: inline-block;
+      padding: .8em;
+      font-weight: bold;
+
+      &::after {
+        top: 0;
+        right: 0;
+      }
+
+      &::before {
+        bottom: 0;
+        left: 0;
+      }
+
+      &::before, &::after {
+        display: block;
+        background: $fontColor;
+        height: 4px;
+        position: absolute;
+        content: '';
+        animation-fill-mode: forwards;
+        animation-name: slide-animation;
+        animation-duration: 2s;
+      }
+    }
+    h2 {
+      font-variant: small-caps;
+      color: transparent;
+      font-weight: lighter;
+      animation-name: fancy-fade;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+    }
+    .social {
+      font-size: 3rem;
+      i {
+        padding: 0 1rem;
+        color: transparent;
+        animation-fill-mode: forwards;
+        animation-name: fancy-fade;
+        animation-duration: 2s;
+        &:nth-child(1) {
+          animation-delay: 0.5s;
+        }
+        &:nth-child(2) {
+          animation-delay: 1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 1.5s;
+        }
+      }
+    }
+  }
+  .more {
+    h3 {
+      font-weight: lighter !important;
+    }
+    .fa {
+      animation-name: tu-me-fais-tourner-laaaa-tete;
+      animation-duration: 2s;
+      animation-delay: 4s;
+    }
+    text-align: center;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+section {
+    text-align: center;
+    padding: 3rem;
+}
+.voyages {
+  background: #940D03;
+  color: $fontColor;
+}
