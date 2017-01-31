@@ -10,6 +10,7 @@
       <th>Surnom</th>
       <th>Prenom Nom</th>
       <th>Pôle</th>
+      <th>Rôle</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -23,10 +24,15 @@
       <td><%= if !user.team.nil?
                 user.team.label
               end %></td>
+      <td><%= user.role %></td>
       <td>
         <div class="btn-group btn-group-sm">
-          <a class="btn btn-warning" href="<%= edit_user_path(user.id) %>">
+          <a class="btn btn-warning" href="<%= edit_user_path(user) %>">
             <i class="fa fa-pencil"></i>
+          </a>
+          <a href="<%= user_path(user) %>" data-method="delete" data-confirm="Êtes-vous sur ?"
+             class="btn btn-danger">
+            <i class="fa fa-trash"></i>
           </a>
         </div>
       </td>

@@ -32,6 +32,14 @@ class TeamsController < ApplicationController
     end
   end
 
+  def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    redirect_to teams_path
+  end
+
+  private
+
   def team_params
     params.require(:team).permit(:label, :classification)
   end

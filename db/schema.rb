@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130225327) do
+ActiveRecord::Schema.define(version: 20170131134944) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170130225327) do
     t.         "name"
     t.         "nickname"
     t.integer  "team_id"
+    t.string   "role"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
