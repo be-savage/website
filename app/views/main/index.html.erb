@@ -18,6 +18,19 @@
   <h1>Membres</h1>
   <h3>Qui sommes-nous ?</h3>
 
+  <% @teams.each do |team| %>
+      <h1><%= team.name %></h1>
+
+      <% team.users.each do |user| %>
+          <%= user.username %>
+          <%= user.firstname %>
+          <%= user.name %>
+          <%= user.nickname %>
+          <img src="<%= user.avatar %>" alt="">
+          <img src="<%= user.avatar_hover %>" alt="">
+      <% end %>
+  <% end %>
+
 </section>
 <section class="voyages" id='voyages'>
   <h1>Voyages</h1>
