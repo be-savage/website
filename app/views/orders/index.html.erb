@@ -1,6 +1,26 @@
 <div class="page-header">
-  <h1>Liste des commandes</h1>
+  <h1>
+    Liste des commandes
+    <small>
+      <% if @stand %>
+          <%= @stand.label %>
+      <% end %>
+    </small>
+  </h1>
 </div>
+
+<% if @stands %>
+    Filtrer par stand :
+    <% @stands.each do |stand| %>
+        <a href="<%= orders_path %>?stand_id=<%= stand.id %>">
+          <%= stand.label %>
+        </a>
+        <% if stand != @stands.last %>
+            -
+        <% end %>
+    <% end %>
+    <hr>
+<% end %>
 
 <table class="table table-hover datatable">
   <thead>

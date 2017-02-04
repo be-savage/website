@@ -3,7 +3,13 @@ class OrdersController < ApplicationController
   authorize_resource
 
   def index
-    @orders = Order.all
+    if params.has_key?(:stand_id)
+      @stand = Stand.find(params[:stand_id])
+      @orders = Order.where('stand_id' => params[:stand_id])
+    else
+      @stands = Stand.all
+      @orders = Order.all
+    end
   end
 
   def show
