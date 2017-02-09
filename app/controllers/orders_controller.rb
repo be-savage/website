@@ -6,9 +6,12 @@ class OrdersController < ApplicationController
     if params.has_key?(:stand_id)
       @stand = Stand.find(params[:stand_id])
       @orders = Order.where('stand_id' => params[:stand_id])
+    elsif params.has_key?(:status)
+      @orders = Order.where('status' => params[:status])
     else
+      @statuses = Order.statuses
       @stands = Stand.all
-      @orders = Order.all
+      @orders = Order.where('status' => :active)
     end
   end
 
@@ -58,6 +61,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:content, :author, :stand_id, :place_id)
+    params.require(:order).permit(:content, :author, :stand_id, :place_id, :status)
   end
 end

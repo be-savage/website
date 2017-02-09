@@ -3,11 +3,12 @@
 </div>
 
 
-<%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, url: orders_path, method: :patch do |f| %>
+<%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
     <%= f.association :place %>
     <%= f.association :stand %>
     <%= f.input :content %>
     <%= f.input :author %>
+    <%= f.input :status %>
 
     <%= f.button :submit %>
 <% end %>

@@ -18,6 +18,12 @@
         <% if stand != @stands.last %>
             -
         <% end %>
+    <% end %><br>
+    Filtrer par statut :
+    <% @statuses.each do |label, id| %>
+        <a href="<%= orders_path %>?status=<%= id %>">
+          <%= label %>
+        </a>
     <% end %>
     <hr>
 <% end %>
