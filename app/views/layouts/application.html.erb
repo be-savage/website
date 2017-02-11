@@ -41,7 +41,6 @@
                   <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
-                <img src="<%= current_user.avatar(:thumb) %>" alt="">
             <% else %>
                 <%= nav_link 'Connexion', new_user_session_path %>
             <% end %>
