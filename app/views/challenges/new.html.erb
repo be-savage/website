@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h1>
+    Défie nous !
+  </h1>
+</div>
+
+<%= simple_form_for @challenge, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :label %>
+    <%= f.input :author %>
+
+    <%= recaptcha_tags %>
+
+    <%= f.button :submit %>
+<% end %>

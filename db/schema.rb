@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209113730) do
+ActiveRecord::Schema.define(version: 20170211232148) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.string   "label"
+    t.string   "author"
+    t.integer  "status",     default: 0
+    t.string   "video_link"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"

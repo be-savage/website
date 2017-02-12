@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>
+    Liste des défis
+  </h1>
+</div>
+
+<ul class="nav nav-tabs nav-justified">
+  <li role="presentation" class="active">
+    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">Proposés</a>
+  </li>
+  <li role="presentation">
+    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">En cours</a>
+  </li>
+  <li role="presentation">
+    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés</a>
+  </li>
+  <li role="presentation">
+    <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">Archivés</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="active">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nom du défi</th>
+        <th>Demandé par</th>
+        <th>Le</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @challenges.each do |challenge| %>
+          <tr>
+            <td><%=	challenge.label %></td>
+            <td><%=	challenge.author %></td>
+            <td><%=	challenge.created_at.to_formatted_s(:short) %></td>
+            <td></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="wip">WIP</div>
+  <div role="tabpanel" class="tab-pane fade" id="completed">...</div>
+  <div role="tabpanel" class="tab-pane fade" id="archived">...</div>
+</div>
