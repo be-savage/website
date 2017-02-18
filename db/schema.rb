@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204160333) do
+ActiveRecord::Schema.define(version: 20170209113730) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
     t.string   "author"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "stand_id"
     t.         "place"
     t.integer  "place_id"
+    t.integer  "status",     default: 0
     t.index ["place_id"], name: "index_orders_on_place_id"
     t.index ["stand_id"], name: "index_orders_on_stand_id"
   end
