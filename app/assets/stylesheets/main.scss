@@ -5,7 +5,10 @@ $teamColor : rgba(18,10,69,1);
   0%   {width: 0;}
   100% {width: 100%;}
 }
-
+@keyframes translate {
+  from {transform: translateY(0);}
+  to {transform: translateY(-100%);}
+}
 @keyframes tu-me-fais-tourner-laaaa-tete {
     0% {
       transform: rotate(0deg);
@@ -30,7 +33,6 @@ nav {
   &.navbar {
     background: $teamColor;
     transition: background .5s;
-    height: 6rem;
 
     .nav > li a, .navbar-brand {
         color: $fontColor;
@@ -104,18 +106,15 @@ html, body {
         height: 4px;
         position: absolute;
         content: '';
+        animation: 2s ease-out 0s slide-animation;
         animation-fill-mode: forwards;
-        animation-name: slide-animation;
-        animation-duration: 2s;
       }
     }
     h2 {
       font-variant: small-caps;
       color: transparent;
       font-weight: lighter;
-      animation-name: fancy-fade;
-      animation-duration: 2s;
-      animation-delay: 2s;
+      animation: 2s ease-out 2s fancy-fade;
       animation-fill-mode: forwards;
     }
     .social {
@@ -123,9 +122,8 @@ html, body {
       i {
         padding: 0 1rem;
         color: transparent;
+        animation: 2s ease-out 0s fancy-fade;
         animation-fill-mode: forwards;
-        animation-name: fancy-fade;
-        animation-duration: 2s;
         &:nth-child(1) {
           animation-delay: 0.5s;
         }
@@ -143,9 +141,7 @@ html, body {
       font-weight: lighter !important;
     }
     .fa {
-      animation-name: tu-me-fais-tourner-laaaa-tete;
-      animation-duration: 2s;
-      animation-delay: 4s;
+      animation: 2s ease-out 4s tu-me-fais-tourner-laaaa-tete;
     }
     text-align: center;
   }
@@ -161,4 +157,113 @@ section {
 .voyages {
   background: #940D03;
   color: $fontColor;
+}
+
+
+.user {
+  flex: 1 1 auto;
+  margin: 15px;
+  width: 300px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 3px 0px #eee;
+  -moz-box-shadow: 2px 2px 3px 0px #eee;
+  box-shadow: 2px 2px 3px 0px #eee;
+  text-align: left;
+  position: relative;
+  padding: 15px;
+  display: inline-block;
+  overflow: hidden;
+
+  .nickname{
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333 !important;
+  }
+  .role {
+    font-size: 1.5em;
+    color: #fda725;
+    font-weight: bold;
+  }
+  blockquote {
+    font-size: 1em;
+    color: #666;
+  }
+  .quote{
+    margin: 0;
+    margin-bottom: -1em;
+    font-size: 2em;
+    display: inline-block;
+    height: 0;
+  }
+  .user-pic {
+    border-radius: 100%;
+    -webkit-box-shadow: 2px 2px 0px 2px #eee;
+    -moz-box-shadow: 2px 2px 0px 2px #eee;
+    box-shadow: 2px 2px 0px 2px #eee;
+    transition: all 1s;
+    max-height: 270px;
+  }
+  .grayscale-hover {
+    -moz-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+    &:hover{
+      transition: filter 0.5s;
+      -moz-filter: none;
+      -ms-filter: none;
+      -o-filter: none;
+      filter: none;
+    }
+  }
+  .to-up {
+    cursor: pointer;
+    color: #666;
+    &:hover {
+      color: #111;
+    }
+  }
+  &.active .content {
+    bottom: 0;
+    left:0;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    top: 100%;
+    display: block;
+    animation: .5s ease-out 0s translate;
+    animation-fill-mode: forwards;
+    margin: 0;
+
+    .close {
+      color: #666;
+      animation: 1s linear 0.5s tu-me-fais-tourner-laaaa-tete;
+      &:hover {
+        color: #111;
+      }
+    }
+  }
+  .content {
+    background-color: #fff;
+    position: absolute;
+    top:0;
+
+    margin-top: 150%;
+    transition: margin .5s;
+    display: block;
+    height: 100%;
+  }
+
+}
+.inline {
+  display: inline-block;
+  width: auto;
+  height: 1px;
+}
+
+.flex-row {
+  flex-flow: row;
+  justify-content: space-between;
 }

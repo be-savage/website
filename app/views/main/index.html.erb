@@ -19,16 +19,38 @@
   <h3>Qui sommes-nous ?</h3>
 
   <% @teams.each do |team| %>
-      <h1><%= team.name %></h1>
-
+    <div class="flex-row">
+      <h1><hr class="inline">Paul <%= team.name %><hr class="inline"></h1>
       <% team.users.each do |user| %>
-          <%= user.username %>
-          <%= user.firstname %>
-          <%= user.name %>
-          <%= user.nickname %>
-          <img src="<%= user.avatar %>" alt="">
-          <img src="<%= user.avatar_hover %>" alt="">
+      <div class="user inactive">
+        <img class="user-pic grayscale-hover" src="<%= user.avatar %>" alt="">
+        <hr>
+          <div class="top-card">
+            <div class="nickname"
+              data-state="true"
+              data-nickname="<%= user.nickname %>"
+              data-name="<%= user.firstname %> <%= user.name %>">
+              <%= user.nickname %>
+            </div>
+            <i class="pull-right fa fa-chevron-up to-up"></i>
+          </div>
+          <div class="content">
+              <div class="nickname"
+              data-state="true"
+              data-nickname="<%= user.nickname %>"
+              data-name="<%= user.firstname %> <%= user.name %>">
+              <%= user.nickname %>
+              </div>
+              <i class="pull-right fa fa-times close"></i>
+            <div class="role"><%= user.role %></div>
+            <!-- <br><b class="quote">“</b> -->
+            <blockquote>
+              <!-- < user.quote %> -->
+            </blockquote>
+        </div>
+      </div>
       <% end %>
+    </div>
   <% end %>
 
 </section>
@@ -36,3 +58,26 @@
   <h1>Voyages</h1>
   <h3>Regarde les merveilleux voyages que tes listeux te proposent</h3>
 </section>
+
+<script type="text/javascript">
+
+function cryptAnim(balise, times, end) {
+  if (times == 0) { balise.html(end); return; }
+  balise.html(Math.random().toString(36).slice(2,12));
+  setTimeout(function () { cryptAnim(balise, times - 1, end) }, 30);
+}
+
+function crypt(t) {
+  let state = $(t).data()["state"]
+  if (state == "true") { cryptAnim($(t), 10, $(t).data()["nickname"]); $(t).data("state", "false")
+  } else { cryptAnim($(t), 10, $(t).data()["name"]); $(t).data("state", "true") }
+}
+
+  $(".nickname")
+  .hover(function() { crypt(this); }, function(){})
+  .click(function() { crypt(this); });
+
+  $(".to-up").click(function() { $(this).parent().parent().removeClass("inactive").addClass("active") })
+  $(".close").click(function() { $(this).parent().parent().removeClass("active").addClass("inactive") })
+
+</script>
