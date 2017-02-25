@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209113730) do
+ActiveRecord::Schema.define(version: 20170225164922) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.string   "label"
+    t.string   "author"
+    t.integer  "status",     default: 0
+    t.string   "video_link"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
@@ -80,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170209113730) do
     t.integer  "avatar_hover_file_size"
     t.datetime "avatar_hover_updated_at"
     t.string   "quote"
+    t.integer  "classification",            default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
