@@ -5,6 +5,7 @@ class Ability
     user ||= User.new
 
     can :create, Order
+    can :create, Challenge
 
     if user.id
       can :manage, :all
