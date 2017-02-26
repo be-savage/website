@@ -4,10 +4,14 @@
 
 <%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
     <%= f.association :place %>
+    <%= f.input :place_details %>
     <%= f.input :content %>
     <%= f.input :author %>
+    <%= f.input :recontact_info %>
 
-    <%= recaptcha_tags %>
+    <% if !user_signed_in?  %>
+        <%= recaptcha_tags %>
+    <% end %>
 
     <%= f.button :submit %>
 <% end %>

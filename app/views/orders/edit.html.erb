@@ -5,9 +5,11 @@
 
 <%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
     <%= f.association :place %>
+    <%= f.input :place_details %>
     <%= f.association :stand %>
     <%= f.input :content %>
     <%= f.input :author %>
+    <%= f.input :recontact_info %>
     <%= f.input :status %>
 
     <%= f.button :submit %>
