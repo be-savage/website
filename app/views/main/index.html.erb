@@ -18,6 +18,9 @@
   <h1>Membres</h1>
   <h3>Qui sommes-nous ?</h3>
 
+  <div class="us">
+  <img src="/groupe2.jpeg" alt=""></div>
+
   <% @teams.each do |team| %>
     <div class="flex-row">
       <h1><hr class="inline">Paul <%= team.name %><hr class="inline"></h1>
@@ -42,7 +45,7 @@
               <%= user.nickname %>
               </div>
               <i class="pull-right fa fa-times close"></i>
-            <div class="role"><%= user.role %></div>
+            <div class="role"><%if user.role == ""%>Membre<% else %><%= user.role %><%end%></div>
             <!-- <br><b class="quote">“</b> -->
             <blockquote>
               <%= user.quote %>

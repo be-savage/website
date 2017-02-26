@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   # Teams
   resources :teams
+
+  # Challenges
+  resources :challenges
 end

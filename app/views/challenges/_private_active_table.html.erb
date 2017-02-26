@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+        <th>#</th>
+        <th>Nom du défi</th>
+        <th>Demandé par</th>
+        <th>Le</th>
+        <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |challenge| %>
+      <tr>
+            <td><%= challenge.id %></td>
+            <td><%=	challenge.label %></td>
+            <td><%=	challenge.author %></td>
+            <td><%=	l challenge.created_at, format: :short %></td>
+            <td>
+              <div class="btn-group btn-group-xs">
+                <a href="<%= edit_challenge_path(challenge) %>" class="btn btn-warning">
+                  <i class="fa fa-pencil"></i>
+                </a>
+              </div>
+            </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

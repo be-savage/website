@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.csv { render text: @users.to_csv }
+    end
   end
 
   def edit
