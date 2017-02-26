@@ -1,0 +1,81 @@
+<% if user_signed_in? %>
+    <div class="page-header">
+      <h1>
+        Gestion des défis
+      </h1>
+    </div>
+
+
+    <p>
+      Vous êtes ici sur la page de gestion des défis. <br>
+      Les défis ont 4 status possibles :
+    <ul>
+      <li>Proposé : le défi n'a pas encore été sélectionné. Il s'agit de l'état par défaut.</li>
+      <li>En cours : le défi est en cours de réalisation.</li>
+      <li>Relevé : le défi a été relevé. Il a alors un numéro de défi et une preuve de réalisation.</li>
+      <li>Archivé : cela permet de rendre invisible un défi proposé. Cela permet de retirer les contenus choquants ou non approriés.</li>
+    </ul>
+    </p>
+<% else %>
+    <div class="page-header">
+      <h1>
+        Défie nous !
+      </h1>
+    </div>
+
+    <%=render 'new_form' %>
+
+    <hr>
+
+    <h3>Liste des défis</h3>
+    <hr>
+<% end %>
+
+<ul class="nav nav-tabs nav-justified">
+  <li role="presentation" class="active">
+    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">Proposés</a>
+  </li>
+  <li role="presentation">
+    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">En cours</a>
+  </li>
+  <li role="presentation">
+    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés</a>
+  </li>
+  <% if user_signed_in? %>
+      <li role="presentation">
+        <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">Archivés</a>
+      </li>
+  <% end %>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="active">
+    <% @items = @challenges.where('status' => :active) %>
+    <% if user_signed_in? %>
+        <%= render 'private_active_table' %>
+    <% else %>
+        <%= render 'public_active_table' %>
+    <% end %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="wip">
+    <% @items = @challenges.where('status' => :wip) %>
+    <% if user_signed_in? %>
+        <%= render 'private_active_table' %>
+    <% else %>
+        <%= render 'public_active_table' %>
+    <% end %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="completed">
+    <% if user_signed_in? %>
+        <%= render 'private_completed_table' %>
+    <% else %>
+        <%= render 'public_completed_table' %>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+      <div role="tabpanel" class="tab-pane fade" id="archived">
+        <% @items = @challenges.where('status' => :archived) %>
+        <%= render 'private_active_table' %>
+      </div>
+  <% end %>
+</div>

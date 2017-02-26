@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>
+    Éditer le défi
+    <small>
+      #<%= @challenge.id %>
+    </small>
+  </h1>
+</div>
+
+<%= simple_form_for @challenge, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :label %>
+    <%= f.input :author %>
+    <%= f.input :status %>
+    <hr>
+    <%= f.input :video_link %>
+
+    <%= f.button :submit %>
+<% end %>

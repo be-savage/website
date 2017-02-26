@@ -80,6 +80,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    i18n-debug (1.1.0)
+      i18n (< 1)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -138,6 +140,9 @@ GEM
       nokogiri (~> 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.3)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.1)
       actionpack (= 5.0.1)
       activesupport (= 5.0.1)
@@ -208,12 +213,14 @@ DEPENDENCIES
   dotenv-rails
   enum_help
   font-awesome-rails (~> 4.7, >= 4.7.0.1)
+  i18n-debug
   jbuilder (~> 2.5)
   jquery-datatables-rails (~> 3.4)
   jquery-rails
   listen (~> 3.0.5)
   paperclip (~> 5.0.0)
   rails (~> 5.0.0)
+  rails-i18n
   recaptcha
   sass-rails (~> 5.0)
   simple_form (~> 3.4)
