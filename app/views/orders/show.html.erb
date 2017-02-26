@@ -7,6 +7,12 @@
 <p>
   <em>Auteur : </em>
   <%= @order.author %>
+  <br>
+  <em>Lieu :</em>
+  <%= @order.place ? @order.place.label : '' %>
+  <br>
+  <em>Passée le :</em>
+  <%= l @order.created_at, format: :short %>
 </p>
 
 <% if @order.stand %>
@@ -20,3 +26,5 @@
   <strong>Description : </strong>
   <%= @order.content %>
 </p>
+
+
