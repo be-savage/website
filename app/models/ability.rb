@@ -6,6 +6,7 @@ class Ability
 
     can :create, Order
     can :create, Challenge
+    can :read, Challenge
 
     if user.id
       can :manage, :all

@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nom du défi</th>
+    <th>Demandé par</th>
+    <th>Le</th>
+    <th>Preuves</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @challenges.where('status' => :completed).each do |challenge| %>
+      <tr>
+        <td><%=	challenge.label %></td>
+        <td><%=	challenge.author %></td>
+        <td><%=	l challenge.created_at, format: :short %></td>
+        <td>
+          <% if !challenge.video_link.empty? %>
+              <a href="<%= challenge.video_link %>"><i class="fa fa-play"></i></a>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
