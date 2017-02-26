@@ -24,7 +24,7 @@
   <% @teams.each do |team| %>
     <div class="flex-row">
       <h1><hr class="inline">Paul <%= team.name %><hr class="inline"></h1>
-      <% team.users.each do |user| %>
+      <% team.users.order(:classification).each do |user| %>
       <div class="user inactive">
         <img class="user-pic grayscale-hover" src="<%= user.avatar %>" alt="">
         <hr>
