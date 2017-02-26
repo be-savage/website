@@ -67,7 +67,7 @@ class OrdersController < ApplicationController
 
   def telegram_message
     if !@order.place.nil?  && !@order.place.stand.nil?
-      r = '*Commande #' + @order.id.to_i.to_s + ' attribué à ' + @order.stand.label + "*\n"
+      r = '*Commande #' + @order.id.to_i.to_s + ' attribuée à ' + @order.stand.label + "*\n"
     else
       r = '*Commande #' + @order.id.to_i.to_s + "*\n"
     end
