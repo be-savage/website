@@ -3,10 +3,8 @@ class ChallengesController < ApplicationController
   authorize_resource
 
   def index
-    @active_challenges = Challenge.where('status' => :active)
-    @wip_challenges = Challenge.where('status' => :wip)
-    @completed_challenges = Challenge.where('status' => :completed)
-    @archived_challenges = Challenge.where('status' => :archived)
+    @challenges = Challenge.all
+    @challenge = Challenge.new
   end
 
   def new

@@ -1,19 +1,35 @@
-<div class="page-header">
-  <h1>
-    Gestion des défis
-  </h1>
-</div>
+<% if user_signed_in? %>
+    <div class="page-header">
+      <h1>
+        Gestion des défis
+      </h1>
+    </div>
 
-<p>
-  Vous êtes ici sur la page de gestion des défis. <br>
-  Les défis ont 4 status possibles :
-  <ul>
-    <li>Proposé : le défi n'a pas encore été sélectionné. Il s'agit de l'état par défaut.</li>
-    <li>En cours : le défi est en cours de réalisation.</li>
-    <li>Relevé : le défi a été relevé. Il a alors un numéro de défi et une preuve de réalisation.</li>
-    <li>Archivé : cela permet de rendre invisible un défi proposé. Cela permet de retirer les contenus choquants ou non approriés.</li>
-  </ul>
-</p>
+
+    <p>
+      Vous êtes ici sur la page de gestion des défis. <br>
+      Les défis ont 4 status possibles :
+    <ul>
+      <li>Proposé : le défi n'a pas encore été sélectionné. Il s'agit de l'état par défaut.</li>
+      <li>En cours : le défi est en cours de réalisation.</li>
+      <li>Relevé : le défi a été relevé. Il a alors un numéro de défi et une preuve de réalisation.</li>
+      <li>Archivé : cela permet de rendre invisible un défi proposé. Cela permet de retirer les contenus choquants ou non approriés.</li>
+    </ul>
+    </p>
+<% else %>
+    <div class="page-header">
+      <h1>
+        Défie nous !
+      </h1>
+    </div>
+
+    <%=render 'new_form' %>
+
+    <hr>
+
+    <h3>Liste des défis</h3>
+    <hr>
+<% end %>
 
 <ul class="nav nav-tabs nav-justified">
   <li role="presentation" class="active">
@@ -25,136 +41,41 @@
   <li role="presentation">
     <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés</a>
   </li>
-  <li role="presentation">
-    <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">Archivés</a>
-  </li>
+  <% if user_signed_in? %>
+      <li role="presentation">
+        <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">Archivés</a>
+      </li>
+  <% end %>
 </ul>
 
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="active">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Nom du défi</th>
-        <th>Demandé par</th>
-        <th>Le</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @active_challenges.each do |challenge| %>
-          <tr>
-            <td><%= challenge.id %></td>
-            <td><%=	challenge.label %></td>
-            <td><%=	challenge.author %></td>
-            <td><%=	challenge.created_at.to_formatted_s(:short) %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a href="<%= edit_challenge_path(challenge) %>" class="btn btn-warning">
-                  <i class="fa fa-pencil"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <% @items = @challenges.where('status' => :active) %>
+    <% if user_signed_in? %>
+        <%= render 'private_active_table' %>
+    <% else %>
+        <%= render 'public_active_table' %>
+    <% end %>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="wip">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Nom du défi</th>
-        <th>Demandé par</th>
-        <th>Le</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @wip_challenges.each do |challenge| %>
-          <tr>
-            <td><%= challenge.id %></td>
-            <td><%=	challenge.label %></td>
-            <td><%=	challenge.author %></td>
-            <td><%=	challenge.created_at.to_formatted_s(:short) %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a href="<%= edit_challenge_path(challenge) %>" class="btn btn-warning">
-                  <i class="fa fa-pencil"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <% @items = @challenges.where('status' => :wip) %>
+    <% if user_signed_in? %>
+        <%= render 'private_active_table' %>
+    <% else %>
+        <%= render 'public_active_table' %>
+    <% end %>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="completed">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Nom du défi</th>
-        <th>Demandé par</th>
-        <th>Le</th>
-        <th>Preuves</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @completed_challenges.each do |challenge| %>
-          <tr>
-            <td><%= challenge.id %></td>
-            <td><%=	challenge.label %></td>
-            <td><%=	challenge.author %></td>
-            <td><%=	challenge.created_at.to_formatted_s(:short) %></td>
-            <td>
-              <% if !challenge.video_link.empty? %>
-                  <a href="<%= challenge.video_link %>"><i class="fa fa-play"></i></a>
-              <% end %>
-            </td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a href="<%= edit_challenge_path(challenge) %>" class="btn btn-warning">
-                  <i class="fa fa-pencil"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <% if user_signed_in? %>
+        <%= render 'private_completed_table' %>
+    <% else %>
+        <%= render 'public_completed_table' %>
+    <% end %>
   </div>
-  <div role="tabpanel" class="tab-pane fade" id="archived">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Nom du défi</th>
-        <th>Demandé par</th>
-        <th>Le</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @archived_challenges.each do |challenge| %>
-          <tr>
-            <td><%= challenge.id %></td>
-            <td><%=	challenge.label %></td>
-            <td><%=	challenge.author %></td>
-            <td><%=	challenge.created_at.to_formatted_s(:short) %></td>
-            <td>
-              <div class="btn-group btn-group-xs">
-                <a href="<%= edit_challenge_path(challenge) %>" class="btn btn-warning">
-                  <i class="fa fa-pencil"></i>
-                </a>
-              </div>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
+  <% if user_signed_in? %>
+      <div role="tabpanel" class="tab-pane fade" id="archived">
+        <% @items = @challenges.where('status' => :archived) %>
+        <%= render 'private_active_table' %>
+      </div>
+  <% end %>
 </div>

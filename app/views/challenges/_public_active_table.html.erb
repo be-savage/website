@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+        <th>Nom du défi</th>
+        <th>Demandé par</th>
+        <th>Le</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |challenge| %>
+      <tr>
+            <td><%=	challenge.label %></td>
+            <td><%=	challenge.author %></td>
+            <td><%=	l challenge.created_at, format: :short %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
