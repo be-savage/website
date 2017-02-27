@@ -60,6 +60,7 @@ html, body {
       display: inline-block;
       padding: .8em;
       font-weight: bold;
+      color: inherit;
 
       &::after {
         top: 0;
@@ -128,12 +129,15 @@ section {
     margin: 0;
 }
 .dark {
-  background: #940D03;
+  background: #26293d;
   color: #fff;
-  h1:after {
-    background: url("/_light.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+  h1{
+    color: #fff;
+    &:after {
+      background: url("/_light.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -271,5 +275,20 @@ section {
       -o-filter: none;
       filter: none;
     }
+  }
+}
+.m-a {
+  margin: auto;
+  float: none !important;
+}
+
+.partners {
+  div {
+    margin: 20px;
+    display: inline-block;
+  }
+  img {
+    width: auto;
+    height: 100px;
   }
 }
