@@ -292,3 +292,28 @@ section {
     height: 100px;
   }
 }
+#savage-logo {
+  animation-fill-mode: forwards;
+  stroke-dasharray: 3362 !important;
+  stroke-dashoffset: 3362;
+  animation: draw  6s linear forwards;
+}
+@keyframes draw {
+  100% {
+    stroke-dasharray: 3362;
+    stroke-dashoffset: 0;
+  }
+}
+
+#savage-logo-minor {
+  animation-fill-mode: forwards;
+  stroke-dasharray: 300 !important;
+  stroke-dashoffset: 300;
+  animation: draw  6s linear forwards;
+}
+@keyframes draw {
+  100% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
+  }
+}

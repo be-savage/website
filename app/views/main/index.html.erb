@@ -3,7 +3,7 @@
   <span></span>
   <div class="title">
     <%= render 'layouts/social' %>
-    <h1>Savage</h1>
+    <h1><%= render 'layouts/not-filled' %></h1>
     <h2>La référence de l'élite eistien</h2>
   </div>
   <div class="more">
@@ -16,8 +16,24 @@
   <h3>Qui sommes-nous ?</h3>
 
   <div class="us">
-  <img src="/groupe2.jpeg" alt=""></div>
-
+    <img src="/groupe2.jpeg" alt="">
+  </div>
+  <h3>Nos ambitions</h3>
+  <p class="container" style="font-size:1.3em;text-align:justify">Nous serons heureux de continuer le
+projet de reconstruction du foyer. Grâce à
+nos partenaires, nous serons en mesure de
+créer un espace convivial pour l'ensemble
+des étudiants.
+Ce sera aussi le retour de l'incontournable
+photo de promotion dès le mois d'octobre,
+sans oublier la photo annuelle du
+personnel.
+<br>
+La dynamique du campus passera par
+l'organisation de nos traditionnelles
+soirées éistiennes, mais également par des
+afterworks et d'autres activités inédites
+en tout genre.</p>
   <% @teams.each do |team| %>
     <div class="flex-row">
       <div class="container">
@@ -149,26 +165,6 @@
   </div>
 </section>
 
-<section class="dark">
-  <div class="container">
-    <h1>Nos Ambitions</h1>
-    <p style="font-size:1.3em;text-align:justify;padding-top:1em;">Nous serons heureux de continuer le
-projet de reconstruction du foyer. Grâce à
-nos partenaires, nous serons en mesure de
-créer un espace convivial pour l'ensemble
-des étudiants.
-Ce sera aussi le retour de l'incontournable
-photo de promotion dès le mois d'octobre,
-sans oublier la photo annuelle du
-personnel.
-<br>
-La dynamique du campus passera par
-l'organisation de nos traditionnelles
-soirées éistiennes, mais également par des
-afterworks et d'autres activités inédites
-en tout genre.</p>
-  </div>
-</section>
 <%= render 'layouts/footer' %>
 
 <script type="text/javascript">

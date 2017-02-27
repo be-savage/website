@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse pull-right">
         <ul class="nav navbar-nav">
           <%= nav_link 'Passe ta commande !', new_order_path %>
-          <%= nav_link 'Défie nous', new_challenge_path %>
+          <%= nav_link 'Défie nous', challenges_path %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -30,8 +30,6 @@
                   <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
-          <% else %>
-              <%= nav_link 'Connexion', new_user_session_path %>
           <% end %>
         </ul>
       </div>
