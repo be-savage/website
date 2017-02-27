@@ -34,23 +34,37 @@
      transition: background .5s;
      border: none;
 
-     .nav {
-       .open > a, .open > a:hover, .open > a:focus {
-         background: darken($teamColor, 20%);
-         color: #fff;
-       }
+     .navbar-toggle {
+       border-radius: 0;
+       border: none;
+       height: 100%;
+       margin: 0;
+     }
+    .navbar-collapse.collapse.in, .navbar-collapse.collapsing {
+      transition: all 0.5s;
+       width: 100%;
+     }
 
-       .navbar-brand {
-          color: #fff !important;
+     .navbar-brand {
+       box-sizing: border-box;
+       height: 51px;
+       padding: 15px 0 9px 0;
+       margin: auto;
+       img {
+         height: 100%;
+         width: auto;
        }
+     }
+
+     .nav {
 
        > li a {
+         color: #eef;
+         border-bottom: solid 1px transparent;
+         font-variant: small-caps;
+         &:hover {
            color: #eef;
-           border-bottom: solid 1px transparent;
-           font-variant: small-caps;
-           &:hover {
-             color: #eef;
-             border-bottom: solid 1px #fff;
+           border-bottom: solid 1px #fff;
          }
        }
        .dropdown-menu li a {
@@ -60,3 +74,14 @@
      }
    }
  }
+
+h1:after {
+  content: "";
+  background-image: url("/_.png");
+  display: block;
+  width: 105px;
+  height: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
