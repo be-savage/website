@@ -90,7 +90,8 @@ html, body {
     }
     .social {
       font-size: 3rem;
-      i {
+      a {
+        text-decoration: none;
         padding: 0 1rem;
         color: transparent;
         animation: 2s ease-out 0s fancy-fade;
@@ -126,11 +127,15 @@ section {
     padding: 0;
     margin: 0;
 }
-.voyages {
+.dark {
   background: #940D03;
-  color: $fontColor;
+  color: #fff;
+  h1:after {
+    background: url("/_light.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
-
 
 .user {
   background: #fff;

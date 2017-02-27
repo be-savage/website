@@ -13,11 +13,7 @@
       <div class="collapse navbar-collapse pull-right">
         <ul class="nav navbar-nav">
           <%= nav_link 'Passe ta commande !', new_order_path %>
-          <% if controller.controller_name == "main" %>
-            <li class=""><a href="#membres">Membres</a></li>
-            <li class=""><a href="#voyages">Voyages</a></li>
-            <li class=""><a href="#">Soirées</a></li>
-          <% end %>
+          <%= nav_link 'Défie nous', new_challenge_path %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>

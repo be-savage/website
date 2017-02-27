@@ -2,7 +2,7 @@
 <section class="presentation">
   <span></span>
   <div class="title">
-    <h3 class="social"> <i class="fa fa-snapchat-square"></i> <i class="fa fa-facebook-square"></i> <i class="fa fa-twitter-square"></i></h3>
+    <%= render 'layouts/social' %>
     <h1>Savage</h1>
     <h2>La référence de l'élite eistien</h2>
   </div>
@@ -11,7 +11,7 @@
     <h3><i class="fa fa-arrow-down" aria-hidden="true"></i></h3>
   </div>
 </section>
-<section class="membres">
+<section class="membres" id="membres">
   <h1>Membres</h1>
   <h3>Qui sommes-nous ?</h3>
 
@@ -54,9 +54,34 @@
   <% end %>
 
 </section>
-<section class="voyages" id='voyages'>
-  <h1>Voyages</h1>
-  <h3>Regarde les merveilleux voyages que tes listeux te proposent</h3>
+<section class="dark" id='voyages'>
+  <div class="container">
+
+    <br>
+    <h1>Voyages</h1>
+    <h3>Regarde les merveilleux voyages que tes listeux te proposent</h3>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h2>Séville</h2>
+        <img src="/sevilla.jpg" alt="Seville" class="img-thumbnail">
+        <p class="text-justify">
+          <br>
+          Avec son atmosphère caliente, Séville est la ville idéale pour passer un séjour inoubliable. Destination vivante au cœur de l'Andalousie, elle offre un excellent terrain de jeu pour les noctambules. Des clubs de Flamenco aux discothèques Techno en passant par les bars à tapas, Séville se déguste le jour mais se vit pleinement une fois la nuit tombée.
+        </p>
+        <hr>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <h2>Varsovie </h2>
+        <img src="/varsovie.jpg" alt="Seville" class="img-thumbnail">
+        <p class="text-justify">
+          <br>
+          Bien que la capitale Polonaise soit moins touristique que Cracovie, c’est à Varsovie que vont les Eistiens pour faire la fête. Que vous souhaitiez passer votre temps à visiter Varsovie et les attractions culturelles de la ville ou simplement boire autant de Tyskie (bière polonaise) que possible avant de reprendre l’avion, les Savage vous ont préparé un séjour de folie !
+        </p>
+        <hr>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script type="text/javascript">
