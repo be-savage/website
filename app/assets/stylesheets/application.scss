@@ -28,6 +28,10 @@ html, body{
    padding-top: 50px;
  }
 
+ .navbar-nav {
+   float: none!important;
+ }
+
  nav {
    background: $teamColor;
    // font-weight: bold;

@@ -294,26 +294,18 @@ section {
 }
 #savage-logo {
   animation-fill-mode: forwards;
-  stroke-dasharray: 3362 !important;
-  stroke-dashoffset: 3362;
+  stroke-dasharray: 2000 !important;
+  stroke-dashoffset: 2000;
   animation: draw  7s linear forwards;
 }
-@keyframes draw {
-  100% {
-    stroke-dasharray: 3362;
-    stroke-dashoffset: 0;
-  }
-}
-
 #savage-logo-minor {
   animation-fill-mode: forwards;
   stroke-dasharray: 300 !important;
   stroke-dashoffset: 300;
-  animation: draw  7s linear forwards;
+  animation: draw  10s linear forwards;
 }
 @keyframes draw {
   100% {
-    stroke-dasharray: 300;
     stroke-dashoffset: 0;
   }
 }
