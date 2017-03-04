@@ -126,6 +126,7 @@ html, body {
 section {
     text-align: center;
     padding: 0;
+    padding-top: 30px;
     margin: 0;
 }
 .dark {
@@ -180,10 +181,7 @@ section {
     height: 0;
   }
   .user-pic {
-    border-radius: 100%;
-    -webkit-box-shadow: 2px 2px 0px 2px #eee;
-    -moz-box-shadow: 2px 2px 0px 2px #eee;
-    box-shadow: 2px 2px 0px 2px #eee;
+    border-radius: 3px;
     transition: all 1s;
     max-height: 270px;
   }
@@ -193,7 +191,6 @@ section {
     -o-filter: grayscale(1);
     filter: grayscale(1);
     &:hover{
-      transition: filter 0.5s;
       -moz-filter: none;
       -ms-filter: none;
       -o-filter: none;

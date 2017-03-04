@@ -1,8 +1,8 @@
-<%= simple_form_for @challenge, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+<%= simple_form_for @challenge do |f| %>
     <%= f.input :label %>
     <%= f.input :author %>
 
+    <%= f.button :submit, class: "pull-right" %>
     <%= recaptcha_tags %>
 
-    <%= f.button :submit %>
 <% end %>

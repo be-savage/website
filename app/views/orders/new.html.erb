@@ -1,17 +1,40 @@
 <div class="page-header">
+  <img class="img-responsive" src="/crepe.jpg" alt="">
   <h1>Passe ta commande !</h1>
 </div>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <h3><i class="fa fa-phone"></i> Tes listeux te proposent</h3>
+    <ol>
+      <li>Crêpes</li>
+      <li>Massage</li>
+      <li>Blagues</li>
+      <li>Livraison (courses, fast food)</li>
+      <li>Vaisselle</li>
+      <li>Ménage</li>
+      <li>Chorée</li>
+      <li>Twerk</li>
+      <li>Limousin</li>
+      <li>Téléphone rose</li>
+      <li>Histoire avant d’aller dormir (au téléphone)</li>
+      <li>Selfie</li>
+      <li>Taxi (sur cergy pref)</li>
+      <li>Banane</li>
+    </ol>
+  </div>
+  <div class="col-xs-12 col-sm-8">
+    <%= simple_form_for @order do |f| %>
+        <%= f.association :place %>
+        <%= f.input :place_details %>
+        <%= f.input :content %>
+        <%= f.input :author %>
+        <%= f.input :recontact_info %>
 
-<%= simple_form_for @order, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
-    <%= f.association :place %>
-    <%= f.input :place_details %>
-    <%= f.input :content %>
-    <%= f.input :author %>
-    <%= f.input :recontact_info %>
+        <% if !user_signed_in?  %>
+            <%= recaptcha_tags %>
+        <% end %>
 
-    <% if !user_signed_in?  %>
-        <%= recaptcha_tags %>
+        <%= f.button :submit, class: "pull-right" %>
     <% end %>
-
-    <%= f.button :submit %>
-<% end %>
+  </div>
+</div>
