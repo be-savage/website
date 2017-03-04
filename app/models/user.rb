@@ -17,9 +17,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar_hover, content_type: /\Aimage\/.*\z/
 
   # Devise
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Use username or email to login
   def self.find_for_database_authentication(warden_conditions)
