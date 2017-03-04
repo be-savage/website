@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170226141757) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "stand_id"
-    t.         "place"
     t.integer  "place_id"
     t.integer  "status",         default: 0
     t.string   "recontact_info"

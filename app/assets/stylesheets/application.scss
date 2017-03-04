@@ -13,8 +13,150 @@
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_tree .
  *= require_self
+ *= require toImport
  */
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+ $teamColor: #26293d;
+ $fontColor: #666;
+
+html, body{
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+ body{
+   padding-top: 50px;
+ }
+
+ .navbar-nav {
+   float: none!important;
+ }
+
+ nav {
+   background: $teamColor;
+   // font-weight: bold;
+   font-size: 2rem;
+   color: #eef !important;
+   border: none;
+   &.navbar {
+     background: $teamColor;
+     transition: background .5s;
+     border: none;
+
+     .navbar-toggle {
+       border-radius: 0;
+       border: none;
+       height: 100%;
+       margin: 0;
+     }
+    .navbar-collapse.collapse.in, .navbar-collapse.collapsing {
+      transition: all 0.5s;
+       width: 100%;
+     }
+
+     .navbar-brand {
+       box-sizing: border-box;
+       height: 51px;
+       padding: 15px 0 9px 0;
+       margin: auto;
+       img {
+         height: 100%;
+         width: auto;
+       }
+     }
+
+     .nav {
+
+       > li a {
+         color: #eef;
+         border-bottom: solid 1px transparent;
+         font-variant: small-caps;
+         &:hover {
+           color: #eef;
+           border-bottom: solid 1px #fff;
+         }
+       }
+       .dropdown-menu li a {
+         color: #333;
+         font-variant: normal;
+       }
+     }
+   }
+ }
+
+h1 {
+  color: #23263d;
+  text-align: center;
+  &:after {
+    content: "";
+    background-image: url("/_.png");
+    display: block;
+    width: 105px;
+    height: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 8px auto;
+  }
+}
+
+footer{
+  background: url("/logo/dark.png");
+  width: 100%;
+  height: 100px;
+  color: #eee;
+  text-align: center;
+  p {
+    padding-top: 15px;
+  }
+  a {
+    color: #bbb;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: #999;
+    }
+  }
+}
+
+.main {
+  margin-top: 25px;
+  margin-bottom: -100px;
+  min-height: calc(100% - 25px);
+}
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}

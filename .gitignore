@@ -23,5 +23,11 @@
 # Env file
 .env
 
+# Vendor
+vendor/*
+
+
 # Public system images
 public/system/
+
+*.csv

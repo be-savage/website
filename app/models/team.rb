@@ -1,7 +1,7 @@
 class Team < ApplicationRecord
   validates :label, presence: true
 
-  has_many :user, dependent: :nullify
+  has_many :users, dependent: :nullify
 
   def name
     label
