@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
       @order.stand = @order.place.stand
     end
 
-    if verify_recaptcha(model: @user) && @order.save
+    if (user_signed_in? or verify_recaptcha(model: @user)) && @order.save
+      Telegram.bot.send_message chat_id: -219439105, text: telegram_message, parse_mode: :Markdown
       redirect_to orders_path
     else
       @places = Place.all
@@ -61,6 +62,25 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:content, :author, :stand_id, :place_id, :status)
+    params.require(:order).permit(:content, :author, :stand_id, :place_id, :status, :recontact_info, :place_details)
+  end
+
+  def telegram_message
+    if !@order.place.nil?  && !@order.place.stand.nil?
+      r = '*Commande #' + @order.id.to_i.to_s + ' attribuée à ' + @order.stand.label + "*\n"
+    else
+      r = '*Commande #' + @order.id.to_i.to_s + "*\n"
+    end
+    r += '*Demandeur : *' + @order.author + "\n"
+    if @order.recontact_info != ''
+      r += '_Contact info : _' + @order.recontact_info + "\n"
+    end
+    r += '*Lieu : *' + @order.place.label + "\n"
+    if @order.place_details != ''
+      r += '_Détails du lieu : _' + @order.place_details + "\n"
+    end
+    r += "\n*Contenu de la commande : *" + @order.content + "\n"
+
+    r
   end
 end

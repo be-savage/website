@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  validates :place, presence: true
   validates :content, presence: true
   validates :author, presence: true
 

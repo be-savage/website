@@ -39,6 +39,8 @@ gem 'simple_form', '~> 3.4'
 gem 'enum_help'
 # Paperclip (images)
 gem 'paperclip', '~> 5.0.0'
+# Telegram
+gem 'telegram-bot'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

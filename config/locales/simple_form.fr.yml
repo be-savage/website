@@ -14,10 +14,12 @@ fr:
     labels:
       defaults:
         place: 'Lieu'
-        content: 'Détails'
+        place_details: 'Détails sur le lieu'
+        content: 'Détails de ta commande'
         author: 'Demandeur'
         login: "Nom d'utilisateur"
         password: "Mot de passe"
+        recontact_info: 'Comment peux t-on te recontacter ?'
 
     # Examples
     # labels:
