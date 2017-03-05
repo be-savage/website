@@ -172,3 +172,14 @@ input, textarea, select {
         overflow: hidden!important;
     }
 }
+
+.nav-tabs {
+  >li>a:hover {
+    border-radius: 0!important;
+    background-color: #f1f1f1;
+  }
+    >li>a {
+      border-radius: 0!important;
+      color: #333;
+  }
+}
