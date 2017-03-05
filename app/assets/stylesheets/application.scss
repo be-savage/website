@@ -28,9 +28,7 @@ html, body{
    padding-top: 50px;
  }
 
- .navbar-nav {
-   float: none!important;
- }
+
 
  nav {
    background: $teamColor;
@@ -118,17 +116,32 @@ footer{
 }
 
 .main {
-  margin-top: 25px;
-  margin-bottom: -100px;
-  min-height: calc(100% - 25px);
+  margin-bottom: 20px;
+  min-height: calc(100% - 120px);
 }
 
-@media (max-width: 991px) {
+input, textarea, select {
+  box-shadow: none !important;
+  border-radius: 1px !important;
+}
+
+@media (max-width: 1080px) {
+    nav .container-fluid {
+      height: 75px;
+      .navbar-brand {
+        box-sizing: border-box;
+        height: 75px;
+        padding: 23px 0 20px 0;
+      }
+    }
     .navbar-header {
         float: none;
     }
     .navbar-toggle {
         display: block;
+        height: 75px !important;
+        box-sizing: border-box;
+        width: 50px;
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -138,7 +151,6 @@ footer{
         display: none!important;
     }
     .navbar-nav {
-        float: none!important;
         margin: 7.5px -15px;
     }
     .navbar-nav>li {
@@ -159,4 +171,15 @@ footer{
     .collapsing {
         overflow: hidden!important;
     }
+}
+
+.nav-tabs {
+  >li>a:hover {
+    border-radius: 0!important;
+    background-color: #f1f1f1;
+  }
+    >li>a {
+      border-radius: 0!important;
+      color: #333;
+  }
 }

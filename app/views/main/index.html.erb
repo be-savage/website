@@ -33,7 +33,7 @@
       <h1>Paul <%= team.name %></h1>
       <% team.users.order(:classification).each do |user| %>
       <div class="user inactive">
-        <img class="user-pic grayscale-hover" src="<%= user.avatar %>" alt="">
+        <img class="user-pic grayscale-hover" src="<%= user.avatar.url(:medium) %>" alt="">
         <hr>
           <div class="top-card">
             <div class="nickname"
@@ -91,12 +91,24 @@
         </p>
       </div>
 
-      <div class="col-md-6 col-sm-12 m-a">
+      <div class="col-md-6 col-sm-12">
         <h2>Ski </h2>
         <img src="/ski_sd.jpeg" alt="Ski" class="img-thumbnail">
         <p class="text-justify">
           <br>
           Rien de mieux qu’une bonne semaine entre Eistiens au ski ! Entre neige et soleil, ski et vin chaud, une chose est sûre, vous ne regretterez pas votre voyage aux sports d’hiver dans une ambiance Savage à souhait ! Du sports et des soirées et toujours plein de convivialité !
+        </p>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <h2>Week-end d'Intégration</h2>
+        <img src="/wei_sd.jpg" alt="Ski" class="img-thumbnail">
+        <p class="text-justify">
+          <br>
+          Le voyage initiatique incontournable
+  ! Préparez-vous à vivre un week-end
+  inoubliable, accompagné par la liste
+  Savage.
         </p>
       </div>
 

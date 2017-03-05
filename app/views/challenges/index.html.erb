@@ -18,6 +18,7 @@
     </p>
 <% else %>
     <div class="page-header">
+      <img class="img-responsive" src="/challenges.jpg" alt="">
       <h1>
         Défie nous !
       </h1>
@@ -28,18 +29,18 @@
     <hr>
 
     <h3>Liste des défis</h3>
-    <hr>
+  <br>
 <% end %>
 
 <ul class="nav nav-tabs nav-justified">
   <li role="presentation" class="active">
-    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">Proposés</a>
+    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">Proposés <span id="count-active" class="badge">0</span></a>
   </li>
   <li role="presentation">
-    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">En cours</a>
+    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">En cours <span id="count-wip" class="badge">0</span></a>
   </li>
   <li role="presentation">
-    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés</a>
+    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés <span id="count-completed" class="badge">0</span></a>
   </li>
   <% if user_signed_in? %>
       <li role="presentation">

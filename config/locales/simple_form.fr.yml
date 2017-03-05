@@ -16,10 +16,11 @@ fr:
         place: 'Lieu'
         place_details: 'Détails sur le lieu'
         content: 'Détails de ta commande'
-        author: 'Demandeur'
+        author: "T'es qui ?"
         login: "Nom d'utilisateur"
         password: "Mot de passe"
         recontact_info: 'Comment peux t-on te recontacter ?'
+        label: "Description"
 
     # Examples
     # labels:
