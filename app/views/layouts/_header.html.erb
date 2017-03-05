@@ -1,6 +1,5 @@
 <!-- Navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
     <div class="container">
 
       <div class="navbar-header">
@@ -20,8 +19,6 @@
 
           <%= nav_link 'Passe ta commande !', new_order_path %>
           <%= nav_link 'Défie nous', challenges_path %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bonjour <%= current_user.username %> <span class="caret"></span></a>
@@ -39,7 +36,6 @@
           <% end %>
         </ul>
       </div>
-    </div>
   </div>
 </nav>
 
