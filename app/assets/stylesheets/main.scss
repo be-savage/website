@@ -142,6 +142,21 @@ section {
   }
 }
 
+.grayscale-hover {
+  -moz-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: all 1s;
+  &:hover{
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none;
+    transition: all 1s;
+  }
+}
+
 .user {
   background: #fff;
   flex: 1 1 auto;
@@ -184,18 +199,6 @@ section {
     border-radius: 3px;
     transition: all 1s;
     max-height: 270px;
-  }
-  .grayscale-hover {
-    -moz-filter: grayscale(1);
-    -ms-filter: grayscale(1);
-    -o-filter: grayscale(1);
-    filter: grayscale(1);
-    &:hover{
-      -moz-filter: none;
-      -ms-filter: none;
-      -o-filter: none;
-      filter: none;
-    }
   }
   .to-up {
     cursor: pointer;
@@ -280,11 +283,9 @@ section {
 }
 
 .partners {
-  div {
+  img {
     margin: 20px;
     display: inline-block;
-  }
-  img {
     width: auto;
     height: 100px;
   }

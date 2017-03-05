@@ -126,12 +126,12 @@ input, textarea, select {
 }
 
 @media (max-width: 1080px) {
-    nav .container-fluid {
+    nav .container {
       height: 75px;
-      .navbar-brand {
+      .navbar-brand{
         box-sizing: border-box;
         height: 75px;
-        padding: 23px 0 20px 0;
+        padding: 23px 0 20px 10px;
       }
     }
     .navbar-header {
@@ -181,5 +181,11 @@ input, textarea, select {
     >li>a {
       border-radius: 0!important;
       color: #333;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar-nav {
+      float: none;
   }
 }
