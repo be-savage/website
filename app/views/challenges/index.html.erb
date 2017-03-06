@@ -34,17 +34,25 @@
 
 <ul class="nav nav-tabs nav-justified">
   <li role="presentation" class="active">
-    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">Proposés <span id="count-active" class="badge">0</span></a>
+    <a href="#active" aria-controls="home" role="tab" data-toggle="tab">
+      Proposés <span id="count-active" class="badge"><%= @challenges.where('status' => :active).count %></span>
+    </a>
   </li>
   <li role="presentation">
-    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">En cours <span id="count-wip" class="badge">0</span></a>
+    <a href="#wip" aria-controls="home" role="tab" data-toggle="tab">
+      En cours <span id="count-wip" class="badge"><%= @challenges.where('status' => :wip).count %></span>
+    </a>
   </li>
   <li role="presentation">
-    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">Relevés <span id="count-completed" class="badge">0</span></a>
+    <a href="#completed" aria-controls="home" role="tab" data-toggle="tab">
+      Relevés <span id="count-completed" class="badge"><%= @challenges.where('status' => :completed).count %></span>
+    </a>
   </li>
   <% if user_signed_in? %>
       <li role="presentation">
-        <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">Archivés</a>
+        <a href="#archived" aria-controls="home" role="tab" data-toggle="tab">
+          Archivés <span id="count-completed" class="badge"><%= @challenges.where('status' => :archived).count %></span>
+        </a>
       </li>
   <% end %>
 </ul>
