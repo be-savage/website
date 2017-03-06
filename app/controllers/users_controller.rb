@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   authorize_resource
 
   def index
-    @users = User.all
+    @users = User.all.order(:name)
     respond_to do |format|
       format.html
       format.csv { render text: @users.to_csv }

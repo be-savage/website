@@ -30,7 +30,7 @@
       <div class="container">
 
       <h1>Paul <%= team.name %></h1>
-      <% team.users.order(:classification).each do |user| %>
+      <% team.users.order(:classification, :nickname).each do |user| %>
       <div class="user inactive">
         <img class="user-pic grayscale-hover" src="<%= user.avatar.url(:medium) %>" alt="">
         <hr>
