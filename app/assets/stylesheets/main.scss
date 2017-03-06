@@ -177,6 +177,8 @@ section {
     display: inline-block;
     font-size: 1.5em;
     font-weight: bold;
+    max-width: 230px;
+    white-space: nowrap;
     color: #333 !important;
   }
   .role {
@@ -212,7 +214,6 @@ section {
     left:0;
     padding: 15px;
     height: 100%;
-    width: 100%;
     top: 100%;
     display: block;
     animation: .5s ease-out 0s translate;
@@ -231,7 +232,7 @@ section {
     background-color: #fff;
     position: absolute;
     top:0;
-
+    width: 100%;
     margin-top: 150%;
     transition: margin .5s;
     display: block;
