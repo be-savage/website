@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226141757) do
+ActiveRecord::Schema.define(version: 20170306163248) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "label"
     t.string   "author"
-    t.integer  "status",     default: 0
+    t.integer  "status",               default: 0
     t.string   "video_link"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -27,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170226141757) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "stand_id"
+    t.         "place"
     t.integer  "place_id"
     t.integer  "status",         default: 0
     t.string   "recontact_info"
