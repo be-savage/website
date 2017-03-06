@@ -1,7 +1,7 @@
 $fontColor : #ccc;
 $teamColor : rgba(18,10,69,1);
 
-@keyframes slide-animation {
+@keyframes slide-an {
   0%   {width: 0;}
   100% {width: 100%;}
 }
@@ -78,7 +78,9 @@ html, body {
         height: 4px;
         position: absolute;
         content: '';
-        animation: 2s ease-out 0s slide-animation;
+        -webkit-animation: 2s ease-out 0s slide-an;
+        animation: 2s ease-out 0s slide-an;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
       }
     }
@@ -86,7 +88,9 @@ html, body {
       font-variant: small-caps;
       color: transparent;
       font-weight: lighter;
+      -webkit-animation: 2s ease-out 2s fancy-fade;
       animation: 2s ease-out 2s fancy-fade;
+      -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
     }
     .social {
@@ -95,15 +99,20 @@ html, body {
         text-decoration: none;
         padding: 0 1rem;
         color: transparent;
+        -webkit-animation: 2s ease-out 0s fancy-fade;
         animation: 2s ease-out 0s fancy-fade;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
         &:nth-child(1) {
+          -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
         }
         &:nth-child(2) {
+          -webkit-animation-delay: 1s;
           animation-delay: 1s;
         }
         &:nth-child(3) {
+          -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
         }
       }
@@ -114,6 +123,7 @@ html, body {
       font-weight: lighter !important;
     }
     .fa {
+      -webkit-animation: 2s ease-out 4s tu-me-fais-tourner-laaaa-tete;
       animation: 2s ease-out 4s tu-me-fais-tourner-laaaa-tete;
     }
     text-align: center;
@@ -177,6 +187,8 @@ section {
     display: inline-block;
     font-size: 1.5em;
     font-weight: bold;
+    max-width: 230px;
+    white-space: nowrap;
     color: #333 !important;
   }
   .role {
@@ -212,15 +224,17 @@ section {
     left:0;
     padding: 15px;
     height: 100%;
-    width: 100%;
     top: 100%;
     display: block;
+    -webkit-animation: .5s ease-out 0s translate;
     animation: .5s ease-out 0s translate;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     margin: 0;
 
     .close {
       color: #666;
+      -webkit-animation: 1s linear 0.5s tu-me-fais-tourner-laaaa-tete;
       animation: 1s linear 0.5s tu-me-fais-tourner-laaaa-tete;
       &:hover {
         color: #111;
@@ -231,7 +245,7 @@ section {
     background-color: #fff;
     position: absolute;
     top:0;
-
+    width: 100%;
     margin-top: 150%;
     transition: margin .5s;
     display: block;
@@ -249,7 +263,6 @@ section {
   flex-flow: row;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 3rem;
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
   &:nth-of-type(2n+1){
@@ -287,19 +300,24 @@ section {
     margin: 20px;
     display: inline-block;
     width: auto;
-    height: 100px;
+    max-height: 100px;
+    max-width: 100%;
   }
 }
 #savage-logo {
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   stroke-dasharray: 2000 !important;
   stroke-dashoffset: 2000;
+  -webkit-animation: draw  7s linear forwards;
   animation: draw  7s linear forwards;
 }
 #savage-logo-minor {
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   stroke-dasharray: 300 !important;
   stroke-dashoffset: 300;
+  -webkit-animation: draw  10s linear forwards;
   animation: draw  10s linear forwards;
 }
 @keyframes draw {

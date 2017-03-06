@@ -6,10 +6,11 @@
     <h2>La référence de l'élite eistien</h2>
   </div>
   <div class="more">
-    <h3>Découvre tes listeux</h3>
-    <h3><i class="fa fa-arrow-down" aria-hidden="true"></i></h3>
+    <h3><a class="not-link" href="#membres">Découvre tes listeux</a></h3>
+    <h3><a class="fa fa-arrow-down not-link" aria-hidden="true" href="#membres"></a></h3>
   </div>
 </section>
+
 <section class="membres" id="membres">
   <h1>Membres</h1>
   <h3>Qui sommes-nous ?</h3>
@@ -24,6 +25,9 @@
     Ce sera aussi le retour de l'incontournable photo de promotion dès le mois d'octobre, sans oublier la photo annuelle du personnel.
     <br>
     La dynamique du campus passera par l'organisation de nos traditionnelles soirées éistiennes, mais également par des afterworks et d'autres activités inédites en tout genre.
+  </p>
+  <p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yQufdxGM8Sg" frameborder="0" allowfullscreen></iframe>
   </p>
   <% @teams.each do |team| %>
     <div class="flex-row">
@@ -138,5 +142,11 @@ function crypt(t) {
 
   $(".to-up").click(function() { $(this).parent().parent().removeClass("inactive").addClass("active") })
   $(".close").click(function() { $(this).parent().parent().removeClass("active").addClass("inactive") })
+
+  $('a[href^="#"]').click(function(e) {
+      e.preventDefault();
+      var aid = $(this).attr("href");
+      $('html,body').animate({scrollTop: $(aid).offset().top},'slow');
+  });
 
 </script>
