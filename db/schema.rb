@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170306163248) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "stand_id"
-    t.         "place"
     t.integer  "place_id"
     t.integer  "status",         default: 0
     t.string   "recontact_info"
@@ -81,9 +80,9 @@ ActiveRecord::Schema.define(version: 20170306163248) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.         "firstname"
-    t.         "name"
-    t.         "nickname"
+    t.string   "firstname"
+    t.string   "name"
+    t.string   "nickname"
     t.integer  "team_id"
     t.string   "role"
     t.string   "avatar_file_name"
