@@ -83,4 +83,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => 'no-reply@be-savage.fr',
+      :password => ENV['MAIL_PASSWORD'],
+      :domain => 'be-savage.fr',
+      :address => 'mail.gandi.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
+  config.action_mailer.default_url_options = { host: 'be-savage.fr' }
+
 end

@@ -1,6 +1,6 @@
 <%= simple_form_for @challenge do |f| %>
-    <%= f.input :label %>
-    <%= f.input :author %>
+    <%= f.input :label, :input_html => {:maxlength => 250} %>
+    <%= f.input :author, :input_html => {:maxlength => 150} %>
 
     <%= f.button :submit, class: "pull-right" %>
     <%= recaptcha_tags %>

@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  include ApplicationHelper
+
   authorize_resource
 
   def index
@@ -20,6 +22,10 @@ class OrdersController < ApplicationController
   end
 
   def new
+    if !user_signed_in? and !allos_dates
+      redirect_to root_path
+    end
+
     @order = Order.new
   end
 

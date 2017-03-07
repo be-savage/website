@@ -21,7 +21,9 @@
           <li class=""><a href="/#partners">Partenaires</a></li>
           <% end %>
 
-          <%= nav_link 'Passe ta commande !', new_order_path %>
+          <% if allos_dates %>
+            <%= nav_link 'Passe ta commande !', new_order_path %>
+          <% end %>
           <%= nav_link 'Défie nous', challenges_path %>
           <% if user_signed_in? %>
               <li class="dropdown">
