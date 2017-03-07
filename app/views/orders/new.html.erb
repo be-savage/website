@@ -25,10 +25,10 @@
   <div class="col-xs-12 col-sm-8">
     <%= simple_form_for @order do |f| %>
         <%= f.association :place %>
-        <%= f.input :place_details %>
-        <%= f.input :content %>
-        <%= f.input :author %>
-        <%= f.input :recontact_info %>
+        <%= f.input :place_details, :input_html => {:maxlength => 150} %>
+        <%= f.input :content, :input_html => {:maxlength => 500} %>
+        <%= f.input :author, :input_html => {:maxlength => 150} %>
+        <%= f.input :recontact_info, :input_html => {:maxlength => 150} %>
 
         <% if !user_signed_in?  %>
             <%= recaptcha_tags %>
