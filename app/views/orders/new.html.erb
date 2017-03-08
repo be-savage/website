@@ -9,18 +9,30 @@
       <li>Crêpes</li>
       <li>Massage</li>
       <li>Blagues</li>
-      <li>Livraison (courses, fast food)</li>
+      <li title="À vos frais">Courses*</li>
+      <li>Twerk</li>
+      <li>Câlin</li>
+      <li title="À vos frais">Cuisine*</li>
+      <li title="Stocks limités">Banane****</li>
+      <li>Histoire</li>
+      <li title="Grec frites sans boisson, attente 30min minimum">Grec 3,50€**</li>
+      <li>Fast food</li>
       <li>Vaisselle</li>
       <li>Ménage</li>
       <li>Chorée</li>
-      <li>Twerk</li>
       <li>Limousin</li>
-      <li>Téléphone rose</li>
-      <li>Histoire avant d’aller dormir (au téléphone)</li>
-      <li>Selfie</li>
-      <li>Taxi (sur cergy pref)</li>
-      <li>Banane</li>
+      <li>Téléphone Rose</li>
+      <li>Compliment</li>
+      <li title="Dans Cergy Préfecture">Taxi***</li>
+      <li title="Commande ta place">Place</li>
     </ol>
+    <h3>Conditions</h3>
+    <p>
+    * : À vos frais <br>
+    ** : Grec frites sans boisson, attente 30min minimum <br>
+    *** : Dans Cergy Préfecture <br>
+    **** : Stocks limités
+    </p>
   </div>
   <div class="col-xs-12 col-sm-8">
     <%= simple_form_for @order do |f| %>
@@ -37,4 +49,5 @@
         <%= f.button :submit, class: "pull-right" %>
     <% end %>
   </div>
+
 </div>
