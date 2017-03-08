@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306163248) do
+ActiveRecord::Schema.define(version: 20170308181919) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "label"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170306163248) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "link"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170306163248) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "stand_id"
+    t.         "place"
     t.integer  "place_id"
     t.integer  "status",         default: 0
     t.string   "recontact_info"
@@ -80,9 +82,9 @@ ActiveRecord::Schema.define(version: 20170306163248) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "firstname"
-    t.string   "name"
-    t.string   "nickname"
+    t.         "firstname"
+    t.         "name"
+    t.         "nickname"
     t.integer  "team_id"
     t.string   "role"
     t.string   "avatar_file_name"
