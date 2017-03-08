@@ -10,7 +10,7 @@ module ApplicationHelper
   def allos_dates
     if Rails.env.development?
       true
-    elsif (Time.now > Time.new(2017,03,8,16,00) and Time.now < Time.new(2017,03,8,0,0)) or (Time.now > Time.new(2017,03,13,5,0) and Time.now < Time.new(2017,03,13,18,0))
+    elsif (Time.now > Time.new(2017,03,8,15,30) and Time.now < Time.new(2017,03,8,0,0)) or (Time.now > Time.new(2017,03,13,5,0) and Time.now < Time.new(2017,03,13,18,0))
       true
     else
       false
