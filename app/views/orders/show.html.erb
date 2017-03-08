@@ -8,8 +8,14 @@
   <em>Auteur : </em>
   <%= @order.author %>
   <br>
+  <em>Information contact :</em>
+  <%= @order.recontact_info %>
+  <br>
   <em>Lieu :</em>
   <%= @order.place ? @order.place.label : '' %>
+  <br>
+  <em>Détails du lieu :</em>
+  <%= @order.place_details %>
   <br>
   <em>Passée le :</em>
   <%= l @order.created_at, format: :short %>
