@@ -15,10 +15,10 @@
         <td><%=	l challenge.created_at, format: :short %></td>
         <td>
           <% if !challenge.video_link.empty? %>
-              <a href="<%= challenge.video_link %>"><i class="fa fa-play"></i></a>
+              <a href="<%= challenge.video_link %>" target="_blank"><i class="fa fa-play"></i></a>
           <% end %>
           <% if challenge.picture_file_name %>
-              <a href="<%= challenge.picture.url %>"><i class="fa fa-camera"></i></a>
+              <a href="<%= challenge.picture.url %>" target="_blank"><i class="fa fa-camera"></i></a>
           <% end %>
         </td>
       </tr>
