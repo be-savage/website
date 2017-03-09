@@ -115,6 +115,14 @@ html, body {
           -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
         }
+        &:nth-child(4) {
+          -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+        }
+        &:nth-child(5) {
+          -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+        }
       }
     }
   }
