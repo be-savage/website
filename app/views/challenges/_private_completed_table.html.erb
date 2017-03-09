@@ -23,7 +23,7 @@
           <% if challenge.picture_file_name %>
               <a href="<%= challenge.picture.url %>" target="_blank"><i class="fa fa-camera"></i></a>
           <% end %>
-          <% if challenge.link %>
+          <% if !challenge.link.empty? %>
               <a href="<%= challenge.link %>" target="_blank"><i class="fa fa-link"></i></a>
           <% end %>
         </td>
