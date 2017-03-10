@@ -1,6 +1,7 @@
 <table class="table table-striped datatable-completed">
   <thead>
   <tr>
+    <th>N°</th>
     <th>Nom du défi</th>
     <th>Demandé par</th>
     <th>Le</th>
@@ -10,6 +11,7 @@
   <tbody>
   <% @challenges.where('status' => :completed).each do |challenge| %>
       <tr>
+        <td><%= challenge.public_id %></td>
         <td><%=	challenge.label %></td>
         <td><%=	challenge.author %></td>
         <td><%=	l challenge.created_at, format: :short %></td>

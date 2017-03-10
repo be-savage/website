@@ -8,6 +8,8 @@
 </div>
 
 <%= simple_form_for @challenge, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :public_id %>
+    <hr>
     <%= f.input :label %>
     <%= f.input :author %>
     <%= f.input :status %>
