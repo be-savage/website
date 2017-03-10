@@ -33,7 +33,7 @@ $(document).ready(function() {
         bInfo: false,
         "lengthChange": false,
         "bPaginate": false,
-        "order": [3, 'desc'],
+        "order": [0, 'desc'],
         "columns": [
             null,
             null,
@@ -48,7 +48,7 @@ $(document).ready(function() {
         bInfo: false,
         "lengthChange": false,
         "bPaginate": false,
-        "order": [4, 'desc'],
+        "order": [1, 'desc'],
         "columns": [
             null,
             null,
