@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def index
     if params.has_key?(:stand_id)
       @stand = Stand.find(params[:stand_id])
-      @orders = Order.where('stand_id' => params[:stand_id])
+      @orders = Order.where('stand_id' => params[:stand_id], 'status' => :active)
     elsif params.has_key?(:status)
       @orders = Order.where('status' => params[:status])
     else
@@ -57,6 +57,20 @@ class OrdersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def complete
+    @order = Order.find(params[:id])
+    @order.status = :completed
+    @order.save
+
+    if params[:stand_id] != nil
+      url = orders_path + '?stand_id=' + params[:stand_id]
+    else
+      url = orders_path
+    end
+
+    redirect_to url
   end
 
   def destroy

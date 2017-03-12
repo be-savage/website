@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # Orders
   resources :orders
+  get 'orders/:id/complete', to: 'orders#complete'
 
   # Stands
   resources :stands

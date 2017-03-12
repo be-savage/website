@@ -57,6 +57,9 @@
           <a href="<%= edit_order_path(order) %>" class="btn btn-warning">
             <i class="fa fa-pencil"></i>
           </a>
+          <a href="<%= orders_path %>/<%= order.id %>/complete<%= @stand ? '?stand_id=' + @stand.id.to_i.to_s : ''%>" class="btn btn-success">
+            <i class="fa fa-check"></i>
+          </a>
           <a href="<%= order_path(order) %>" data-method="delete" data-confirm="Êtes-vous sur ?"
              class="btn btn-danger">
             <i class="fa fa-trash"></i>
