@@ -1,8 +1,11 @@
-# Allo ?
+# Savage website
+
+This project is a campaign site of EISTI student association.
 
 For this project, we use:
 - Ruby On Rails 5.0
 - SQLite in dev
+- Postgres in prod
 - reCaptcha
 
 Tools you need:
